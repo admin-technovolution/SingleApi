@@ -1,0 +1,226 @@
+[
+    {
+        "_id": "ST",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Straight",
+                "desc": "Attraction to people of the opposite gender"
+            },
+            {
+                "iso6391": "es",
+                "name": "Heterosexual",
+                "desc": "Atracción hacia personas del género opuesto"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "GA",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Gay",
+                "desc": "Attraction to persons of the same gender (specifically man)"
+            },
+            {
+                "iso6391": "es",
+                "name": "Gay",
+                "desc": "Atracción de personas del mismo género (específicamente hombres)"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "LE",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Lesbian",
+                "desc": "Attraction to persons of the same gender (specifically woman)"
+            },
+            {
+                "iso6391": "es",
+                "name": "Lesbiana",
+                "desc": "Atracción de personas del mismo género (específicamente mujeres)"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "BI",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Bisexual",
+                "desc": "Attraction to both genders"
+            },
+            {
+                "iso6391": "es",
+                "name": "Bisexual",
+                "desc": "Atracción hacia ambos géneros"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "PA",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Pansexual",
+                "desc": "Attraction regardless of gender"
+            },
+            {
+                "iso6391": "es",
+                "name": "Pansexual",
+                "desc": "Atracción independientemente del género"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "OM",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Omnisexual",
+                "desc": "Attraction to all genders, often with gender as a factor in preference"
+            },
+            {
+                "iso6391": "es",
+                "name": "Omnisexual",
+                "desc": "Atracción hacia todos los géneros, a menudo considerando el género en la preferencia"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "AR",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Aromantic",
+                "desc": "Little or no romantic attraction to others"
+            },
+            {
+                "iso6391": "es",
+                "name": "Aromántico",
+                "desc": "Poca o ninguna atracción romántica hacia otras personas"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "QU",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Queer",
+                "desc": "Non-conforming orientation"
+            },
+            {
+                "iso6391": "es",
+                "name": "Queer",
+                "desc": "Orientación no conforme"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "AS",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Asexual",
+                "desc": "Little or no sexual attraction"
+            },
+            {
+                "iso6391": "es",
+                "name": "Asexual",
+                "desc": "Poca o ninguna atracción sexual"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "DE",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Demisexual",
+                "desc": "Attraction after emotional bond"
+            },
+            {
+                "iso6391": "es",
+                "name": "Demisexual",
+                "desc": "Atracción después de un vínculo emocional"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "SA",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Sapiosexual",
+                "desc": "Attraction to intelligence"
+            },
+            {
+                "iso6391": "es",
+                "name": "Sapiosexual",
+                "desc": "Atracción hacia la inteligencia"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "QO",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Questioning / Unsure",
+                "desc": "Exploring orientation"
+            },
+            {
+                "iso6391": "es",
+                "name": "En cuestionamiento / No seguro",
+                "desc": "Explorando la orientación"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "NS",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Prefer not to say",
+                "desc": "Prefers privacy"
+            },
+            {
+                "iso6391": "es",
+                "name": "Prefiero no decirlo",
+                "desc": "Prefiere privacidad"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "OT",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Other",
+                "desc": "Other orientation"
+            },
+            {
+                "iso6391": "es",
+                "name": "Otro",
+                "desc": "Otra orientación"
+            }
+        ],
+        "status": "A"
+    }
+]

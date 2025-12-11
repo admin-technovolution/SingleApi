@@ -1,0 +1,19 @@
+module.exports = {
+    CACHE_KEY_CONFIGS: "cache:configs",
+    CACHE_KEY_DIET_HABITS: "cache:dietHabits",
+    CACHE_KEY_DRINKING_HABITS: "cache:drinkingHabits",
+    CACHE_KEY_MUSIC_GENRES: "cache:musicGenres",
+    CACHE_KEY_ARTISTS: "cache:artists",
+    CACHE_KEY_EXERCISE_HABITS: "cache:exerciseHabits",
+    CACHE_KEY_FAMILY_PLANS: "cache:familyPlans",
+    CACHE_KEY_GENRE: "cache:genres",
+    CACHE_KEY_LANGUAGES: "cache:languages",
+    CACHE_KEY_LOOKING_FOR: "cache:lookingFor",
+    CACHE_KEY_SEXUAL_ORIENTATIONS: "cache:sexualOrientations",
+    CACHE_KEY_SMOKING_HABITS: "cache:smokingHabits",
+    CACHE_KEY_ZODIAC_SIGNS: "cache:zodiacSigns",
+    REDIS_KEY_ACCESS_TOKEN: "accessTokens:",
+    REDIS_KEY_REFRESH_TOKEN: "refreshTokens:",
+    REDIS_KEY_PASSWORD_RESET_CODE: "passwordResetCode:",
+    REDIS_KEY_USER_SOCKETS: "userSockets:"
+};

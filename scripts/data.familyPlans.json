@@ -1,0 +1,72 @@
+[
+    {
+        "_id": "1",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "I want children"
+            },
+            {
+                "iso6391": "es",
+                "name": "Quiero tener hijos"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "2",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "I do not want children"
+            },
+            {
+                "iso6391": "es",
+                "name": "No quiero tener hijos"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "3",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "I have children and want more"
+            },
+            {
+                "iso6391": "es",
+                "name": "Tengo hijos y quiero más"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "4",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "I have children and do not want more"
+            },
+            {
+                "iso6391": "es",
+                "name": "Tengo hijos y no quiero más"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "5",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Not sure yet"
+            },
+            {
+                "iso6391": "es",
+                "name": "Aún no estoy seguro"
+            }
+        ],
+        "status": "A"
+    }
+]

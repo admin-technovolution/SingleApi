@@ -1,0 +1,86 @@
+[
+    {
+        "_id": "1",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Something casual"
+            },
+            {
+                "iso6391": "es",
+                "name": "Algo casual"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "2",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Long-term relationship"
+            },
+            {
+                "iso6391": "es",
+                "name": "Relación a largo plazo"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "3",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Long-term, open to short"
+            },
+            {
+                "iso6391": "es",
+                "name": "Relación a largo plazo, abierto a corto"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "4",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Short-term, open to long"
+            },
+            {
+                "iso6391": "es",
+                "name": "Relación a corto plazo, abierto a largo"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "5",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "New friends or chats"
+            },
+            {
+                "iso6391": "es",
+                "name": "Nuevos amigos o conversaciones"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "6",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Still figuring it out"
+            },
+            {
+                "iso6391": "es",
+                "name": "Aún lo estoy descubriendo"
+            }
+        ],
+        "status": "A"
+    }
+]

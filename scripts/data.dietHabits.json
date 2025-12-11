@@ -1,0 +1,114 @@
+[
+    {
+        "_id": "1",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Vegan"
+            },
+            {
+                "iso6391": "es",
+                "name": "Vegano"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "2",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Vegetarian"
+            },
+            {
+                "iso6391": "es",
+                "name": "Vegetariano"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "3",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Pescatarian"
+            },
+            {
+                "iso6391": "es",
+                "name": "Pescetariano"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "4",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Kosher"
+            },
+            {
+                "iso6391": "es",
+                "name": "Kosher"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "5",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Halal"
+            },
+            {
+                "iso6391": "es",
+                "name": "Halal"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "6",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Carnivore"
+            },
+            {
+                "iso6391": "es",
+                "name": "Carnívoro"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "7",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Omnivore"
+            },
+            {
+                "iso6391": "es",
+                "name": "Omnívoro"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "8",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Other"
+            },
+            {
+                "iso6391": "es",
+                "name": "Otro"
+            }
+        ],
+        "status": "A"
+    }
+]

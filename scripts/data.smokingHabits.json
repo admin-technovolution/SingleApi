@@ -1,0 +1,72 @@
+[
+    {
+        "_id": "1",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Non-smoker"
+            },
+            {
+                "iso6391": "es",
+                "name": "No fumador"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "2",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Smoker"
+            },
+            {
+                "iso6391": "es",
+                "name": "Fumador"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "3",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Social smoker"
+            },
+            {
+                "iso6391": "es",
+                "name": "Fumador social"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "4",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Smoker when drinking"
+            },
+            {
+                "iso6391": "es",
+                "name": "Fumo cuando bebo"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "5",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Trying to quit"
+            },
+            {
+                "iso6391": "es",
+                "name": "Intentando dejarlo"
+            }
+        ],
+        "status": "A"
+    }
+]

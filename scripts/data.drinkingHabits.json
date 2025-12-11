@@ -1,0 +1,72 @@
+[
+    {
+        "_id": "1",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Not for me"
+            },
+            {
+                "iso6391": "es",
+                "name": "No es para mí"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "2",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "On special occasions"
+            },
+            {
+                "iso6391": "es",
+                "name": "En ocasiones especiales"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "3",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Socially on weekends"
+            },
+            {
+                "iso6391": "es",
+                "name": "Socialmente los fines de semana"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "4",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Most nights"
+            },
+            {
+                "iso6391": "es",
+                "name": "La mayoría de las noches"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "5",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Trying to quit"
+            },
+            {
+                "iso6391": "es",
+                "name": "Intentando dejarlo"
+            }
+        ],
+        "status": "A"
+    }
+]
