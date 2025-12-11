@@ -1,0 +1,170 @@
+[
+    {
+        "_id": "1",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Aries"
+            },
+            {
+                "iso6391": "es",
+                "name": "Aries"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "2",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Taurus"
+            },
+            {
+                "iso6391": "es",
+                "name": "Tauro"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "3",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Gemini"
+            },
+            {
+                "iso6391": "es",
+                "name": "Géminis"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "4",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Cancer"
+            },
+            {
+                "iso6391": "es",
+                "name": "Cáncer"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "5",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Leo"
+            },
+            {
+                "iso6391": "es",
+                "name": "Leo"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "6",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Virgo"
+            },
+            {
+                "iso6391": "es",
+                "name": "Virgo"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "7",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Libra"
+            },
+            {
+                "iso6391": "es",
+                "name": "Libra"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "8",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Scorpio"
+            },
+            {
+                "iso6391": "es",
+                "name": "Escorpio"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "9",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Sagittarius"
+            },
+            {
+                "iso6391": "es",
+                "name": "Sagitario"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "10",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Capricorn"
+            },
+            {
+                "iso6391": "es",
+                "name": "Capricornio"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "11",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Aquarius"
+            },
+            {
+                "iso6391": "es",
+                "name": "Acuario"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "12",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Pisces"
+            },
+            {
+                "iso6391": "es",
+                "name": "Piscis"
+            }
+        ],
+        "status": "A"
+    }
+]

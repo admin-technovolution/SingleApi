@@ -1,0 +1,72 @@
+[
+    {
+        "_id": "1",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Everyday"
+            },
+            {
+                "iso6391": "es",
+                "name": "Todos los días"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "2",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Often"
+            },
+            {
+                "iso6391": "es",
+                "name": "A menudo"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "3",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "A couple of times a week"
+            },
+            {
+                "iso6391": "es",
+                "name": "Un par de veces por semana"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "4",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Rarely"
+            },
+            {
+                "iso6391": "es",
+                "name": "Raramente"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "5",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Never"
+            },
+            {
+                "iso6391": "es",
+                "name": "Nunca"
+            }
+        ],
+        "status": "A"
+    }
+]

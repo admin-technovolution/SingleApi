@@ -1,0 +1,173 @@
+const Joi = require('joi');
+const c = require('../../shared/util/constants.frontcodes');
+
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     RefreshTokenSchema:
+ *       type: object
+ *       required:
+ *         - refreshToken
+ *       properties:
+ *         refreshToken:
+ *           type: string
+ *           example: eyJhbGciOi
+*/
+const refreshTokenSchema = Joi.object({
+    refreshToken: Joi.string().trim().required()
+        .messages({
+            'any.required': c.CODE_REFRESH_TOKEN_REQUIRED,
+            'string.empty': c.CODE_REFRESH_TOKEN_REQUIRED
+        })
+});
+
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     LogoutSchema:
+ *       type: object
+ *       required:
+ *         - accessToken
+ *         - refreshToken
+ *         - fcmToken
+ *       properties:
+ *         accessToken:
+ *           type: string
+ *           example: eyJhbGciOiAcc
+ *         refreshToken:
+ *           type: string
+ *           example: eyJhbGciOiRef
+ *         fcmToken:
+ *           type: string
+ *           example: eyJhbGciOiFcm
+*/
+const logoutSchema = Joi.object({
+    accessToken: Joi.string().trim().required()
+        .messages({
+            'any.required': c.CODE_REFRESH_TOKEN_REQUIRED,
+            'string.empty': c.CODE_REFRESH_TOKEN_REQUIRED
+        }),
+    refreshToken: Joi.string().trim().required()
+        .messages({
+            'any.required': c.CODE_REFRESH_TOKEN_REQUIRED,
+            'string.empty': c.CODE_REFRESH_TOKEN_REQUIRED
+        }),
+    fcmToken: Joi.string().required()
+        .messages({
+            'any.required': c.CODE_FCM_TOKEN_REQUIRED,
+            'string.empty': c.CODE_FCM_TOKEN_REQUIRED
+        })
+});
+
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     LoginSchema:
+ *       type: object
+ *       required:
+ *         - email
+ *         - password
+ *         - fcmToken
+ *       properties:
+ *         email:
+ *           type: string
+ *           example: johndoe@example.com
+ *         password:
+ *           type: string
+ *           example: StrongPassword123
+ *         fcmToken:
+ *           type: string
+ *           example: eyJhbGciOi...
+*/
+const loginSchema = Joi.object({
+    email: Joi.string().trim().max(256).email().required()
+        .messages({
+            'any.required': c.CODE_EMAIL_REQUIRED,
+            'string.empty': c.CODE_EMAIL_REQUIRED,
+            'string.max': c.CODE_EMAIL_MAX,
+            'string.email': c.CODE_EMAIL_INVALID
+        }),
+    password: Joi.string().trim().max(256).required()
+        .messages({
+            'any.required': c.CODE_PASSWORD_REQUIRED,
+            'string.empty': c.CODE_PASSWORD_REQUIRED,
+            'string.max': c.CODE_PASSWORD_MAX
+        }),
+    fcmToken: Joi.string().required()
+        .messages({
+            'any.required': c.CODE_FCM_TOKEN_REQUIRED,
+            'string.empty': c.CODE_FCM_TOKEN_REQUIRED
+        })
+});
+
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     SendPasswordResetCodeSchema:
+ *       type: object
+ *       required:
+ *         - email
+ *       properties:
+ *         email:
+ *           type: string
+ *           example: johndoe@example.com
+*/
+const sendPasswordResetCodeSchema = Joi.object({
+    email: Joi.string().trim().max(256).email().required()
+        .messages({
+            'any.required': c.CODE_EMAIL_REQUIRED,
+            'string.empty': c.CODE_EMAIL_REQUIRED,
+            'string.max': c.CODE_EMAIL_MAX,
+            'string.email': c.CODE_EMAIL_INVALID
+        })
+});
+
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     VerifyResetCodeSchema:
+ *       type: object
+ *       required:
+ *         - email
+ *         - verificationCode
+ *         - password
+ *       properties:
+ *         email:
+ *           type: string
+ *           example: johndoe@example.com
+ *         verificationCode:
+ *           type: string
+ *           example: 123456
+ *         password:
+ *           type: string
+ *           example: StrongPassword123
+*/
+const verifyResetCodeSchema = Joi.object({
+    email: Joi.string().trim().max(256).email().required()
+        .messages({
+            'any.required': c.CODE_EMAIL_REQUIRED,
+            'string.empty': c.CODE_EMAIL_REQUIRED,
+            'string.max': c.CODE_EMAIL_MAX,
+            'string.email': c.CODE_EMAIL_INVALID
+        }),
+    verificationCode: Joi.string().max(64).pattern(/^\d+$/).required()
+        .messages({
+            'any.required': c.CODE_VERIFICATION_TOKEN_REQUIRED,
+            'string.empty': c.CODE_VERIFICATION_TOKEN_REQUIRED,
+            'string.pattern.base': c.CODE_VERIFICATION_TOKEN_NUMBER,
+            'string.max': c.CODE_VERIFICATION_TOKEN_MAX
+        }),
+    password: Joi.string().trim().max(256).required()
+        .messages({
+            'any.required': c.CODE_PASSWORD_REQUIRED,
+            'string.empty': c.CODE_PASSWORD_REQUIRED,
+            'string.max': c.CODE_PASSWORD_MAX
+        })
+});
+
+module.exports = { loginSchema, refreshTokenSchema, sendPasswordResetCodeSchema, verifyResetCodeSchema, logoutSchema };

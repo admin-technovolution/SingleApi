@@ -1,0 +1,1342 @@
+[
+    {
+        "_id": "1",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "ABBA"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "2",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "AC/DC"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "3",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Adele"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "4",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "A$AP Rocky"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "5",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Arcade Fire"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "6",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Arctic Monkeys"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "7",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Ariana Grande"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "8",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Aretha Franklin"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "9",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Bad Bunny"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "10",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "BB King"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "11",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Beyoncé"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "12",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Billie Eilish"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "13",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Billy Joel"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "14",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Blondie"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "15",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Bob Dylan"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "16",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Bob Marley"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "17",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Bob Seger"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "18",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "The Beach Boys"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "19",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "The Beatles"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "20",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Bruno Mars"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "21",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Bruce Springsteen"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "22",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Buena Vista Social Club"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "23",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "BTS"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "24",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Carlos Santana"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "25",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Carlos Vives"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "26",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Celia Cruz"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "27",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Celine Dion"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "28",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Childish Gambino"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "29",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Chuck Berry"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "30",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Coldplay"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "31",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "David Bowie"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "32",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Daddy Yankee"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "33",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Dire Straits"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "34",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Doris Day"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "35",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Doja Cat"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "36",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Drake"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "37",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Dua Lipa"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "38",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Ed Sheeran"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "39",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Ella Fitzgerald"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "40",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Elton John"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "41",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Elvis Presley"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "42",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Eminem"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "43",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Ennio Morricone"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "44",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Eurythmics"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "45",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Feid"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "46",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Fleetwood Mac"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "47",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Frank Sinatra"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "48",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Future"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "49",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "George Michael"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "50",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Gloria Estefan"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "51",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Harry Styles"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "52",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Imagine Dragons"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "53",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "J Balvin"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "54",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "J. Cole"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "55",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "James Brown"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "56",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Janis Joplin"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "57",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Jay-Z"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "58",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Jimi Hendrix"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "59",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Joan Baez"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "60",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "John Coltrane"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "61",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Johnny Cash"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "62",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Julio Iglesias"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "63",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Juanes"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "64",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Kanye West"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "65",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Karol G"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "66",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Kendrick Lamar"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "67",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Lady Gaga"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "68",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Lana Del Rey"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "69",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Led Zeppelin"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "70",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Leonard Cohen"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "71",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Lizzo"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "72",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Louis Armstrong"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "73",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Luis Miguel"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "74",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Madonna"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "75",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Maluma"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "76",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Marvin Gaye"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "77",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Metallica"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "78",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Metro Boomin"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "79",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Michael Jackson"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "80",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Miles Davis"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "81",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Morgan Wallen"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "82",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Myke Towers"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "83",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Neil Young"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "84",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Nick Cave"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "85",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Nicki Minaj"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "86",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Nina Simone"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "87",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Nirvana"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "88",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Oasis"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "89",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Olivia Rodrigo"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "90",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Otis Redding"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "91",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Ozuna"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "92",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Paco de Lucía"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "93",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Paul Simon"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "94",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Patti Smith"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "95",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Pearl Jam"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "96",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Peso Pluma"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "97",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Pink Floyd"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "98",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Post Malone"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "99",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Prince"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "100",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Queen"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "101",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Radiohead"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "102",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Rauw Alejandro"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "103",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Ray Charles"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "104",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "R.E.M."
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "105",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Red Hot Chili Peppers"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "106",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Rema"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "107",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Rihanna"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "108",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Rosalía"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "109",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Sade"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "110",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Santana"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "111",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Selena"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "112",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Selena Gomez"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "113",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Shakira"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "114",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Simon & Garfunkel"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "115",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "SZA"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "116",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "St. Vincent"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "117",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Stevie Wonder"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "118",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Taylor Swift"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "119",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "The Clash"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "120",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "The Cure"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "121",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "The Killers"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "122",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "The Kinks"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "123",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "The Notorious B.I.G."
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "124",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "The Rolling Stones"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "125",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "The Smiths"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "126",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "The Weeknd"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "127",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Tom Petty"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "128",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Travis Scott"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "129",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Tupac Shakur"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "130",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Tyler, The Creator"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "131",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "U2"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "132",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Vampire Weekend"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "133",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Van Morrison"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "134",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Zach Bryan"
+            }
+        ],
+        "status": "A"
+    }
+]

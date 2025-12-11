@@ -1,0 +1,44 @@
+[
+    {
+        "_id": "M",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Male"
+            },
+            {
+                "iso6391": "es",
+                "name": "Hombre"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "F",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Female"
+            },
+            {
+                "iso6391": "es",
+                "name": "Mujer"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "NB",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Non-Binary"
+            },
+            {
+                "iso6391": "es",
+                "name": "No binario"
+            }
+        ],
+        "status": "A"
+    }
+]

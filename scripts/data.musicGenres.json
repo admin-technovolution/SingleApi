@@ -1,0 +1,464 @@
+[
+    {
+        "_id": "1",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Pop"
+            },
+            {
+                "iso6391": "es",
+                "name": "Pop"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "2",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Hip-Hop"
+            },
+            {
+                "iso6391": "es",
+                "name": "Hip-Hop"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "3",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "R&B"
+            },
+            {
+                "iso6391": "es",
+                "name": "R&B"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "4",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Rap"
+            },
+            {
+                "iso6391": "es",
+                "name": "Rap"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "5",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Rock"
+            },
+            {
+                "iso6391": "es",
+                "name": "Rock"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "6",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Latin"
+            },
+            {
+                "iso6391": "es",
+                "name": "Latina"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "7",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Reggaeton"
+            },
+            {
+                "iso6391": "es",
+                "name": "Reguetón"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "8",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "EDM"
+            },
+            {
+                "iso6391": "es",
+                "name": "EDM"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "9",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Dance"
+            },
+            {
+                "iso6391": "es",
+                "name": "Dance"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "10",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Electronic"
+            },
+            {
+                "iso6391": "es",
+                "name": "Electrónica"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "11",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Country"
+            },
+            {
+                "iso6391": "es",
+                "name": "Country"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "12",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "K-Pop"
+            },
+            {
+                "iso6391": "es",
+                "name": "K-Pop"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "13",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Afrobeats"
+            },
+            {
+                "iso6391": "es",
+                "name": "Afrobeats"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "14",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Classical"
+            },
+            {
+                "iso6391": "es",
+                "name": "Clásica"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "15",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Jazz"
+            },
+            {
+                "iso6391": "es",
+                "name": "Jazz"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "16",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Blues"
+            },
+            {
+                "iso6391": "es",
+                "name": "Blues"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "17",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Gospel"
+            },
+            {
+                "iso6391": "es",
+                "name": "Góspel"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "18",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Christian"
+            },
+            {
+                "iso6391": "es",
+                "name": "Cristiana"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "19",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Indie Pop"
+            },
+            {
+                "iso6391": "es",
+                "name": "Indie Pop"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "20",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Indie Rock"
+            },
+            {
+                "iso6391": "es",
+                "name": "Indie Rock"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "21",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Alternative"
+            },
+            {
+                "iso6391": "es",
+                "name": "Alternativa"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "22",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Lo-Fi"
+            },
+            {
+                "iso6391": "es",
+                "name": "Lo-Fi"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "23",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Chillhop"
+            },
+            {
+                "iso6391": "es",
+                "name": "Chillhop"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "24",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Metal"
+            },
+            {
+                "iso6391": "es",
+                "name": "Metal"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "25",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Folk"
+            },
+            {
+                "iso6391": "es",
+                "name": "Folk"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "26",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "House"
+            },
+            {
+                "iso6391": "es",
+                "name": "House"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "27",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Techno"
+            },
+            {
+                "iso6391": "es",
+                "name": "Techno"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "28",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Trap"
+            },
+            {
+                "iso6391": "es",
+                "name": "Trap"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "29",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Drill"
+            },
+            {
+                "iso6391": "es",
+                "name": "Drill"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "30",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Grime"
+            },
+            {
+                "iso6391": "es",
+                "name": "Grime"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "31",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Vallenato"
+            },
+            {
+                "iso6391": "es",
+                "name": "Vallenato"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "32",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Cumbia"
+            },
+            {
+                "iso6391": "es",
+                "name": "Cumbia"
+            }
+        ],
+        "status": "A"
+    },
+    {
+        "_id": "33",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Salsa"
+            },
+            {
+                "iso6391": "es",
+                "name": "Salsa"
+            }
+        ],
+        "status": "A"
+    }
+]
