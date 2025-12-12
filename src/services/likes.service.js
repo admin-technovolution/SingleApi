@@ -1,7 +1,7 @@
 const BaseResponse = require('../../shared/util/baseResponse');
 const BusinessException = require('../../shared/exceptionHandler/BusinessException');
 const BasePaginatedResponse = require('../../shared/util/basePaginatedResponse');
-const { ObjectId } = require('mongodb');
+const ObjectId = require("mongoose").Types.ObjectId;
 const c = require('../../shared/util/constants.frontcodes');
 const constants = require('../../shared/util/constants');
 const jwtUtil = require('../../shared/util/jwt');
