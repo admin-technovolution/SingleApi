@@ -1,4 +1,4 @@
-const { ObjectId } = require('mongodb');
+const ObjectId = require("mongoose").Types.ObjectId;
 const BaseResponse = require('../../shared/util/baseResponse');
 const BasePaginatedResponse = require('../../shared/util/basePaginatedResponse');
 const BusinessException = require('../../shared/exceptionHandler/BusinessException');

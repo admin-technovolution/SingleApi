@@ -1,5 +1,5 @@
 const { flatten } = require('flat');
-const { ObjectId } = require('mongodb');
+const ObjectId = require("mongoose").Types.ObjectId;
 const BaseResponse = require('../../shared/util/baseResponse');
 const BusinessException = require('../../shared/exceptionHandler/BusinessException');
 const ImageProcessor = require('../../shared/util/ImageProcessor');

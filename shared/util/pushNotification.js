@@ -2,7 +2,7 @@ const path = require('path');
 const logger = require('../config/logger');
 const filename = path.basename(__filename);
 const constants = require('./constants');
-const { ObjectId } = require('mongodb');
+const ObjectId = require("mongoose").Types.ObjectId;
 const firebase = require("../config/firebase");
 const FCMRepository = require("../../src/repository/fcmToken.repository");
 
