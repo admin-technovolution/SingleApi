@@ -1,6 +1,6 @@
 # Single APIs and Sockets
 
-### Dependencies
+### Dependencies 
 * Node JS (required)
     * Version 24 +
 * NPM (required)
