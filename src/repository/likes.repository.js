@@ -50,6 +50,15 @@ async function deleteByFilter(filter) {
     }
 }
 
+const deleteManyByFilter = async (filter) => {
+    try {
+        return await Likes.deleteMany(filter);
+    } catch (err) {
+        logger.error(`Error in deleteManyByFilter. Error: ${err}`, { className: filename });
+        throw new DataLayerException(c.CODE_INTERNAL_SERVER_ERROR);
+    }
+}
+
 const deleteById = async (id) => {
     try {
         return await Likes.findByIdAndDelete(id);
@@ -58,4 +67,4 @@ const deleteById = async (id) => {
         throw new DataLayerException(c.CODE_INTERNAL_SERVER_ERROR);
     }
 }
-module.exports = { findByAnyFilter, findByPipeline, save, deleteByFilter, deleteById, countLikesByFilter };
+module.exports = { findByAnyFilter, findByPipeline, save, deleteByFilter, deleteById, countLikesByFilter, deleteManyByFilter };

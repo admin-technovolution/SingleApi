@@ -363,4 +363,49 @@ router.post('/me/photos/delete', validateToken, validateBody(userPhotosSchema), 
  */
 router.get('/:userId', validateToken, UserController.getUserById);
 
+/**
+ * @swagger
+ * /api/user/delete-account:
+ *   delete:
+ *     summary: Delete user account
+ *     tags:
+ *       - Users
+ *     security:
+ *       - Bearer: []
+ *     parameters:
+ *       - in: header
+ *         name: Authorization
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: Authorization token
+ *         example: Bearer eyJhbGciOi
+ *     responses:
+ *       200:
+ *         description: Success
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/BaseResponse'
+ *       400:
+ *         description: Bad Request
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/BaseResponse'
+ *       401:
+ *         description: Unauthorized
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/BaseResponse'
+ *       500:
+ *         description: Internal Server Error
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/BaseResponse'
+ */
+router.delete('/delete-account', validateToken, UserController.deleteUserAccount);
+
 module.exports = router;

@@ -32,4 +32,13 @@ async function save(report) {
     }
 }
 
-module.exports = { findByAnyFilter, findOneByAnyFilter, save };
+const deleteManyByFilter = async (filter) => {
+    try {
+        return await Report.deleteMany(filter);
+    } catch (err) {
+        logger.error(`Error in deleteManyByFilter. Error: ${err}`, { className: filename });
+        throw new DataLayerException(c.CODE_INTERNAL_SERVER_ERROR);
+    }
+}
+
+module.exports = { findByAnyFilter, findOneByAnyFilter, save, deleteManyByFilter };

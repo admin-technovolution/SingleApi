@@ -25,10 +25,20 @@ async function save(dislike) {
 
 const deleteById = async (id) => {
     try {
-        return await Dislikes.findByIdAndDelete(id);
+        return await Dislikes.find(id);
     } catch (err) {
         logger.error(`Error in deleteById. Error: ${err}`, { className: filename });
         throw new DataLayerException(c.CODE_INTERNAL_SERVER_ERROR);
     }
 }
-module.exports = { findByAnyFilter, save, deleteById };
+
+const deleteManyByFilter = async (filter) => {
+    try {
+        return await Dislikes.deleteMany(filter);
+    } catch (err) {
+        logger.error(`Error in deleteManyByFilter. Error: ${err}`, { className: filename });
+        throw new DataLayerException(c.CODE_INTERNAL_SERVER_ERROR);
+    }
+}
+
+module.exports = { findByAnyFilter, save, deleteById, deleteManyByFilter };

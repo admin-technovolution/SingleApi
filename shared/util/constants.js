@@ -23,6 +23,7 @@ module.exports = {
     STATUS_INACTIVE: "I",
     STATUS_DESC_ACTIVE: "active",
     STATUS_DESC_INACTIVE: "inactive",
+    STATUS_DESC_DELETING: "deleting",
     REDIS_FALSE: "0",
     WS_EVENT_OPEN_CHAT: "openChat",
     WS_EVENT_MESSAGE_READ: "messageRead",

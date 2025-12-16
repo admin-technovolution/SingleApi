@@ -198,6 +198,7 @@ const deleteRedisTokens = async (userId) => {
 
     await deleteKeysByUserId(dataAccessTokens, userId);
     await deleteKeysByUserId(dataRefreshTokens, userId);
+    await redisClient.del(`${consCache.REDIS_KEY_USER_SOCKETS}${userId}`);
 }
 
 const deleteFcmTokens = async (userId) => {
