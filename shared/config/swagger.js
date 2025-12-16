@@ -18,6 +18,7 @@ const swaggerOptions = {
             { name: "Login" },
             { name: "Master Data" },
             { name: "Matches" },
+            { name: "Reports" },
             { name: "RTDN Google" },
             { name: "Subscription" },
             { name: "Users" },
