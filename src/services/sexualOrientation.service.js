@@ -8,7 +8,7 @@ const CACHE_TTL_SECS = process.env.MASTER_DATA_CACHE_TTL_SECS || 86400;
 
 const getSexualOrientations = async () => {
     let sexualOrientations = cache.get(consCache.CACHE_KEY_SEXUAL_ORIENTATIONS);
-    if (!sexualOrientations) {
+    if (!sexualOrientations || sexualOrientations.length === 0) {
         sexualOrientations = await SexualRepository.findAllByStatus(constants.STATUS_ACTIVE);
         cache.set(consCache.CACHE_KEY_SEXUAL_ORIENTATIONS, sexualOrientations, CACHE_TTL_SECS);
     }

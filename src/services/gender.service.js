@@ -8,7 +8,7 @@ const CACHE_TTL_SECS = process.env.MASTER_DATA_CACHE_TTL_SECS || 86400;
 
 const getGenders = async () => {
     let genders = cache.get(consCache.CACHE_KEY_GENRE);
-    if (!genders) {
+    if (!genders || genders.length === 0) {
         genders = await GenderRepository.findAllByStatus(constants.STATUS_ACTIVE);
         cache.set(consCache.CACHE_KEY_GENRE, genders, CACHE_TTL_SECS);
     }

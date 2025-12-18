@@ -8,7 +8,7 @@ const CACHE_TTL_SECS = process.env.MASTER_DATA_CACHE_TTL_SECS || 86400;
 
 const getFamilyPlans = async () => {
     let familyPlans = cache.get(consCache.CACHE_KEY_FAMILY_PLANS);
-    if (!familyPlans) {
+    if (!familyPlans || familyPlans.length === 0) {
         familyPlans = await FamilyPlanRepository.findAllByStatus(constants.STATUS_ACTIVE);
         cache.set(consCache.CACHE_KEY_FAMILY_PLANS, familyPlans, CACHE_TTL_SECS);
     }

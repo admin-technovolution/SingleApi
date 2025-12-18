@@ -8,7 +8,7 @@ const CACHE_TTL_SECS = process.env.MASTER_DATA_CACHE_TTL_SECS || 86400;
 const getConfigs = async () => {
     let config = cache.get(consCache.CACHE_KEY_CONFIGS);
 
-    if (!config) {
+    if (!config || config.length === 0) {
         config = await ConfigRepository.findAll();
         cache.set(consCache.CACHE_KEY_CONFIGS, config, CACHE_TTL_SECS);
     }

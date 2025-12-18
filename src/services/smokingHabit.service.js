@@ -8,7 +8,7 @@ const CACHE_TTL_SECS = process.env.MASTER_DATA_CACHE_TTL_SECS || 86400;
 
 const getSmokingHabits = async () => {
     let smokingHabits = cache.get(consCache.CACHE_KEY_SMOKING_HABITS);
-    if (!smokingHabits) {
+    if (!smokingHabits || smokingHabits.length === 0) {
         smokingHabits = await SmokingHabitRepository.findAllByStatus(constants.STATUS_ACTIVE);
         cache.set(consCache.CACHE_KEY_SMOKING_HABITS, smokingHabits, CACHE_TTL_SECS);
     }

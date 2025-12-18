@@ -8,7 +8,7 @@ const CACHE_TTL_SECS = process.env.MASTER_DATA_CACHE_TTL_SECS || 86400;
 
 const getDietHabits = async () => {
     let dietHabits = cache.get(consCache.CACHE_KEY_DIET_HABITS);
-    if (!dietHabits) {
+    if (!dietHabits || dietHabits.length === 0) {
         dietHabits = await DietHabitRepository.findAllByStatus(constants.STATUS_ACTIVE);
         cache.set(consCache.CACHE_KEY_DIET_HABITS, dietHabits, CACHE_TTL_SECS);
     }

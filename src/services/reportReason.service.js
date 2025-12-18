@@ -8,7 +8,7 @@ const CACHE_TTL_SECS = process.env.MASTER_DATA_CACHE_TTL_SECS || 86400;
 
 const getReportReasons = async () => {
     let reportReasons = cache.get(consCache.CACHE_KEY_REPORT_REASONS);
-    if (!reportReasons) {
+    if (!reportReasons || reportReasons.length === 0) {
         const sort = {};
         reportReasons = await ReportReasonRepository.findAllByStatus(constants.STATUS_ACTIVE, sort);
         cache.set(consCache.CACHE_KEY_REPORT_REASONS, reportReasons, CACHE_TTL_SECS);

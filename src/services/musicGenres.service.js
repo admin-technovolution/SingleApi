@@ -8,7 +8,7 @@ const CACHE_TTL_SECS = process.env.MASTER_DATA_CACHE_TTL_SECS || 86400;
 
 const getMusicGenres = async () => {
     let musicGenres = cache.get(consCache.CACHE_KEY_MUSIC_GENRES);
-    if (!musicGenres) {
+    if (!musicGenres || musicGenres.length === 0) {
         musicGenres = await MusicGenresRepository.findAllByStatus(constants.STATUS_ACTIVE);
         cache.set(consCache.CACHE_KEY_MUSIC_GENRES, musicGenres, CACHE_TTL_SECS);
     }

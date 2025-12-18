@@ -8,7 +8,7 @@ const CACHE_TTL_SECS = process.env.MASTER_DATA_CACHE_TTL_SECS || 86400;
 
 const getArtists = async () => {
     let artists = cache.get(consCache.CACHE_KEY_ARTISTS);
-    if (!artists) {
+    if (!artists || artists.length === 0) {
         artists = await ArtistRepository.findAllByStatus(constants.STATUS_ACTIVE, constants.DEFAULT_SORTING_BY_NAME);
         cache.set(consCache.CACHE_KEY_ARTISTS, artists, CACHE_TTL_SECS);
     }
