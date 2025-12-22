@@ -1,17 +1,11 @@
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const http = require('http');
 const path = require('path');
 const filename = path.basename(__filename);
 const logger = require('./shared/config/logger');
-
-if (process.env.NODE_ENV !== 'local') {
-    logger.info('dotenv enabled', { className: filename });
-    require('dotenv').config();
-}
-
 const { setupWebSocketServer } = require('./shared/config/ws');
-
 const mongoose = require('./shared/config/mongo');
 const redisClient = require('./shared/config/redis');
 const discoverRoutes = require('./src/routes/discover.route');
