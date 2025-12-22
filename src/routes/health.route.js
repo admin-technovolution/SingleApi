@@ -114,7 +114,6 @@ const mailerStatus = async (healthInfo) => {
             user: transporter.options.auth.user
         };
     } catch (err) {
-        console.log(err)
         healthInfo.services.mailer = {
             status: "error",
             error: err.message

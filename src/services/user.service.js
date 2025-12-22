@@ -26,6 +26,7 @@ const languageService = require('../services/language.service');
 const lookingForService = require('../services/lookingFor.service');
 const zodiacSignService = require('../services/zodiacSign.service');
 const util = require('../../shared/util/util');
+const utilNudity = require('../../shared/util/util.nudity');
 const jwtUtil = require('../../shared/util/jwt');
 const redisClient = require('../../shared/config/redis');
 const User = require('../models/user.model');
@@ -376,6 +377,8 @@ const updateImageUser = async (req) => {
     let user = await UserRepository.findOneByFilter(filter);
 
     if (!user) throw new BusinessException(c.CODE_PHOTOS_NOT_FOUND);
+
+    await utilNudity.checkNudityImages(files, userId, req);
 
     const processor = new ImageProcessor();
     const filesTransformed = await processor.processImages(files, userId);
