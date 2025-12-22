@@ -96,6 +96,8 @@ const registerUser = async (req) => {
     const files = req.files;
     await validateUserInput(body, files);
 
+    await utilNudity.checkNudityImages(files, constants.NEW_USER, req);
+
     let hashedPassword = await util.generateHash(body.password, true);
 
     let user = new User({
@@ -349,6 +351,8 @@ const addImageUser = async (req) => {
     let user = await UserRepository.findOneByFilter(filter);
 
     if (user.photos.length + files.length > 6) throw new BusinessException(c.CODE_PHOTOS_MAX);
+
+    await utilNudity.checkNudityImages(files, userId, req);
 
     const processor = new ImageProcessor();
     const addIsProfile = user.photos.length === 0;
