@@ -2,9 +2,16 @@ const express = require('express');
 const cors = require('cors');
 const http = require('http');
 const path = require('path');
-const logger = require('./shared/config/logger');
-const { setupWebSocketServer } = require('./shared/config/ws');
 const filename = path.basename(__filename);
+const logger = require('./shared/config/logger');
+
+if (process.env.NODE_ENV !== 'local') {
+    logger.info('dotenv enabled', { className: filename });
+    require('dotenv').config();
+}
+
+const { setupWebSocketServer } = require('./shared/config/ws');
+
 const mongoose = require('./shared/config/mongo');
 const redisClient = require('./shared/config/redis');
 const discoverRoutes = require('./src/routes/discover.route');
@@ -38,6 +45,7 @@ const requestLogger = require('./shared/middlewares/requestLogger');
 const responseLogger = require('./shared/middlewares/responseLogger');
 const { swaggerUi, swaggerSpec } = require('./shared/config/swagger');
 const utilNudity = require('./shared/util/util.nudity');
+
 
 const app = express();
 

@@ -39,7 +39,7 @@ router.get("/health", async (req, res) => {
         status: "ok",
         name: packageJson.name,
         version: packageJson.version,
-        environment: process.env.NODE_ENV || "development",
+        environment: process.env.NODE_ENV || "local",
         uptime: process.uptime(),
         timestamp: new Date().toISOString(),
         services: {}
