@@ -29,6 +29,7 @@ module.exports = (socket, namespace) => {
                 chatId: payload.chatId,
                 sender: userId,
                 content: payload.content,
+                messageId: payload.messageId,
                 seenBy: [userId]
             });
 
@@ -60,6 +61,7 @@ module.exports = (socket, namespace) => {
                         conversationId: message._id,
                         chatId: payload.chatId,
                         content: payload.content,
+                        messageId: payload.messageId,
                         sender: userId,
                         fullName: user.userInfo.fullName,
                         photos: user.photos,
