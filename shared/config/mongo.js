@@ -50,6 +50,6 @@ mongoose.connection.on('disconnected', () => {
     connectWithRetry();
 });
 
-connectWithRetry();
+mongoose.connectWithRetry = connectWithRetry;
 
 module.exports = mongoose;

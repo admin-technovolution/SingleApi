@@ -89,5 +89,6 @@ const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => {
     logger.info(`Single Backend App server running on port ${PORT}`, { className: filename })
 
+    mongoose.connectWithRetry();
     utilNudity.loadModel();
 });
