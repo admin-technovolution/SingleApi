@@ -13,7 +13,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
-      contents: read #This is required for actions/checkout
+      contents: read
 
     steps:
       - uses: actions/checkout@v4
@@ -28,7 +28,6 @@ jobs:
         run: |
           npm ci
           npm run build --if-present
-          npm prune --production
           zip -r release.zip . -x "*.git*" ".github*"
 
       - name: Upload artifact for deployment job
