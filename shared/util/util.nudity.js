@@ -24,9 +24,7 @@ if (!util.isNullOrUndefined) {
 
 async function loadModel() {
     if (!modelnsfw) {
-        logger.info(`TensorFlow: starting to load ${modelTensor} model`, { className: filename, req: req });
         modelnsfw = await nsfw.load(modelTensor);
-        logger.info(`TensorFlow: model ${modelTensor} loaded successfully`, { className: filename, req: req });
     }
     return modelnsfw;
 }
