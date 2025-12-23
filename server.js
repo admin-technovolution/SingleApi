@@ -90,5 +90,6 @@ server.listen(PORT, () => {
     logger.info(`Single Backend App server running on port ${PORT}`, { className: filename })
 
     mongoose.connectWithRetry();
+    redisClient.connect();
     utilNudity.loadModel();
 });

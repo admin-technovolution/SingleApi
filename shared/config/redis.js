@@ -13,8 +13,6 @@ const redisClient = redis.createClient({
     }
 });
 
-redisClient.connect();
-
 redisClient.on('ready', () => {
     reconnectAttempt = 0;
     logger.info('Redis connected', { className: filename });
