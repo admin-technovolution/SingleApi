@@ -11,7 +11,7 @@ const vision = require('@google-cloud/vision');
 const visionServiceAccountBase64 = process.env.VISION_SERVICE_ACCOUNT;
 const visionServiceAccountBase64Decoded = Buffer.from(visionServiceAccountBase64, "base64").toString("utf8");
 const visionServiceAccount = JSON.parse(visionServiceAccountBase64Decoded);
-
+const modelTensor = 'MobileNetV2Mid';
 const visionClient = new vision.ImageAnnotatorClient({
     credentials: visionServiceAccount
 });
@@ -24,7 +24,9 @@ if (!util.isNullOrUndefined) {
 
 async function loadModel() {
     if (!modelnsfw) {
-        modelnsfw = await nsfw.load('MobileNetV2Mid');
+        logger.info(`TensorFlow: starting to load ${modelTensor} model`, { className: filename, req: req });
+        modelnsfw = await nsfw.load(modelTensor);
+        logger.info(`TensorFlow: model ${modelTensor} loaded successfully`, { className: filename, req: req });
     }
     return modelnsfw;
 }
@@ -186,8 +188,7 @@ function jsonStringify(obj, options = {}) {
     );
 }
 
-loadModel();
-
 module.exports = {
-    checkNudityImages
+    checkNudityImages,
+    loadModel
 };

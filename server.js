@@ -39,12 +39,9 @@ const requestLogger = require('./shared/middlewares/requestLogger');
 const responseLogger = require('./shared/middlewares/responseLogger');
 const { swaggerUi, swaggerSpec } = require('./shared/config/swagger');
 const utilNudity = require('./shared/util/util.nudity');
-
-
 const app = express();
 
 app.set("trust proxy", true);
-
 app.use(correlationMiddleware);
 app.use(cors());
 app.use(express.json());
@@ -89,4 +86,8 @@ if (process.env.ENABLE_SWAGGER === 'true') {
 setupWebSocketServer(server);
 
 const PORT = process.env.PORT || 3000;
-server.listen(PORT, () => logger.info(`Single Backend App server running on port ${PORT}`, { className: filename }));
+server.listen(PORT, () => {
+    logger.info(`Single Backend App server running on port ${PORT}`, { className: filename })
+
+    utilNudity.loadModel();
+});
