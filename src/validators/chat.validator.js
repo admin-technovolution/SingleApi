@@ -74,11 +74,10 @@ const chatSendMessageSchema = Joi.object({
             'any.required': c.CODE_CONTENT_REQUIRED,
             'string.empty': c.CODE_CONTENT_REQUIRED
         }),
-    messageId: Joi.string().required()
+    messageId: Joi.string().optional()
         .messages({
-            'any.required': c.CODE_CONVERSATIONID_REQUIRED,
-            'string.empty': c.CODE_CONVERSATIONID_REQUIRED
-        }),
+            'string.empty': c.CODE_MESSAGEID_REQUIRED,
+        })
 });
 
 /**

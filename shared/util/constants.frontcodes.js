@@ -53,6 +53,7 @@ module.exports = {
     CODE_MATCH_NOT_FOUND: "match.notFound",
     CODE_MAXIMUM_DISTANCE_NUMBER: "maximumDistance.number",
     CODE_CONVERSATION_NOT_FOUND: "conversation.notFound",
+    CODE_MESSAGEID_REQUIRED: "messageId.required",
     CODE_MUSIC_GENRES_DUPLICATES: "musicGenres.duplicates",
     CODE_MUSIC_GENRES_REQUIRED: "musicGenres.required",
     CODE_MUSIC_GENRES_NOT_FOUND: "musicGenres.notFound",
