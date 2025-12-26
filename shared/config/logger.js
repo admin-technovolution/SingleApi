@@ -9,7 +9,7 @@ const MAX_LEVEL_WIDTH = 0;
 const MAX_IP_WIDTH = 0;
 
 const transport = new winston.transports.DailyRotateFile({
-    filename: 'logs/single-%DATE%.log',
+    filename: 'tmp/logs/single-%DATE%.log',
     datePattern: 'YYYY-MM-DD',
     maxSize: '5m',
     maxFiles: '30d'
