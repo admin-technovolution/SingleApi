@@ -1,5 +1,8 @@
 module.exports = {
+    HTTP_SUCCESS: 200,
+    HTTP_BAD_REQUEST: 400,
     HTTP_UNATHORIZED: 401,
+    HTTP_INTERNAL_SERVER: 500,
     MAX_CHARS_LOG_PER_STRING: 256,
     HEADER_CORRELATION_ID: "x-correlation-id",
     SENSITIVE_KEYS: ['password', 'token', 'accesstoken', 'refreshtoken', 'authorization', 'purchasetoken', 'offertoken', 'verificationcode', 'fcmtoken'],

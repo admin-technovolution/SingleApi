@@ -38,7 +38,6 @@ const correlationMiddleware = require('./shared/middlewares/correlationMiddlewar
 const requestLogger = require('./shared/middlewares/requestLogger');
 const responseLogger = require('./shared/middlewares/responseLogger');
 const { swaggerUi, swaggerSpec } = require('./shared/config/swagger');
-const utilNudity = require('./shared/util/util.nudity');
 const app = express();
 
 app.set("trust proxy", true);
@@ -91,5 +90,4 @@ server.listen(PORT, () => {
 
     mongoose.connectWithRetry();
     redisClient.connect();
-    utilNudity.loadModel();
 });
