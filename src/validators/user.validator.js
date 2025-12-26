@@ -446,13 +446,12 @@ const registerUserSchema = Joi.object({
             'string.max': c.CODE_EMAIL_MAX,
             'string.email': c.CODE_EMAIL_INVALID
         }),
-    password: Joi.string().min(8).max(128).pattern(new RegExp(constants.PASSWORD_PATTERN)).required()
+    password: Joi.string().min(8).max(128).required()
         .messages({
             'any.required': c.CODE_PASSWORD_REQUIRED,
             'string.empty': c.CODE_PASSWORD_REQUIRED,
             'string.min': c.CODE_PASSWORD_MIN,
-            'string.max': c.CODE_PASSWORD_MAX,
-            'string.pattern.base': c.CODE_PASSWORD_PATTERN
+            'string.max': c.CODE_PASSWORD_MAX
         }),
     userInfo: userInfoJoi.required()
         .messages({
@@ -525,13 +524,12 @@ const userPhotosSchema = Joi.object({
 });
 
 const changePasswordSchema = Joi.object({
-    password: Joi.string().min(8).max(128).pattern(new RegExp(constants.PASSWORD_PATTERN)).required()
+    password: Joi.string().min(8).max(128).required()
         .messages({
             'any.required': c.CODE_PASSWORD_REQUIRED,
             'string.empty': c.CODE_PASSWORD_REQUIRED,
             'string.min': c.CODE_PASSWORD_MIN,
-            'string.max': c.CODE_PASSWORD_MAX,
-            'string.pattern.base': c.CODE_PASSWORD_PATTERN
+            'string.max': c.CODE_PASSWORD_MAX
         })
 });
 

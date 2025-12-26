@@ -4,8 +4,6 @@ module.exports = {
     HEADER_CORRELATION_ID: "x-correlation-id",
     SENSITIVE_KEYS: ['password', 'token', 'accesstoken', 'refreshtoken', 'authorization', 'purchasetoken', 'offertoken', 'verificationcode', 'fcmtoken'],
     MASK_SENSITIVE_KEYS: '**********',
-    ALPHABET_NUMBERS: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789",
-    PASSWORD_PATTERN: "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$",
     BASIC_PLAN_LIKES_PER_DAY: "BASIC_PLAN_LIKES_PER_DAY",
     ERROR_GENERIC_RESPONSE: "ERROR_GENERIC_RESPONSE",
     ERROR_UNAUTHORIZED: "ERROR_UNAUTHORIZED",

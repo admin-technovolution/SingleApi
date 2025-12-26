@@ -66,7 +66,6 @@ module.exports = {
     CODE_PASSWORD_REQUIRED: "password.required",
     CODE_PASSWORD_MIN: "password.min",
     CODE_PASSWORD_MAX: "password.max",
-    CODE_PASSWORD_PATTERN: "password.pattern",
     CODE_PATH_MAX: "path.max",
     CODE_PATH_REQUIRED: "path.required",
     CODE_PHOTOS_MAX: "images.max",
