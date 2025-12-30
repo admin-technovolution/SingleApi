@@ -59,11 +59,6 @@ async function sendPush(token, eventType, payload = {}, title = '', body = '', i
             android: {
                 priority: "high"
             },
-            notification: {
-                title,
-                body,
-                image
-            },
             data: {
                 custom_body: body,
                 type: eventType,
