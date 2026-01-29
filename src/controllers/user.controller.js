@@ -2,6 +2,15 @@ const c = require('../../shared/util/constants');
 const BusinessException = require('../../shared/exceptionHandler/BusinessException');
 const UserService = require('../services/user.service');
 
+const deleteUserAccount = async (req, res, next) => {
+  try {
+    let jsonResponse = await UserService.deleteUserAccount(req);
+    res.status(200).json(jsonResponse);
+  } catch (err) {
+    next(err);
+  }
+};
+
 const getUserById = async (req, res, next) => {
   try {
     let jsonResponse = await UserService.getUserById(req);
@@ -86,4 +95,14 @@ const deleteImageUser = async (req, res, next) => {
   }
 };
 
-module.exports = { registerUser, getUserMe, getUserById, updateUser, addImageUser, updateImageUser, deleteImageUser, changePassword };
+module.exports = {
+  registerUser,
+  getUserMe,
+  getUserById,
+  updateUser,
+  addImageUser,
+  updateImageUser,
+  deleteImageUser,
+  changePassword,
+  deleteUserAccount
+};

@@ -8,7 +8,7 @@ const CACHE_TTL_SECS = process.env.MASTER_DATA_CACHE_TTL_SECS || 86400;
 
 const getLanguages = async () => {
     let languages = cache.get(consCache.CACHE_KEY_LANGUAGES);
-    if (!languages) {
+    if (!languages || languages.length === 0) {
         languages = await LanguageRepository.findAllByStatus(constants.STATUS_ACTIVE);
         cache.set(consCache.CACHE_KEY_LANGUAGES, languages, CACHE_TTL_SECS);
     }

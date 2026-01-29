@@ -41,4 +41,13 @@ async function updateMany(filter, update, options = {}) {
     }
 }
 
-module.exports = { save, updateMany, findByPipeline, findOneByFilter };
+const deleteManyByFilter = async (filter) => {
+    try {
+        return await Conversation.deleteMany(filter);
+    } catch (err) {
+        logger.error(`Error in deleteManyByFilter. Error: ${err}`, { className: filename });
+        throw new DataLayerException(c.CODE_INTERNAL_SERVER_ERROR);
+    }
+}
+
+module.exports = { save, updateMany, findByPipeline, findOneByFilter, deleteManyByFilter };

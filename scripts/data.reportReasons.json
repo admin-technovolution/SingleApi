@@ -1,0 +1,155 @@
+[
+    {
+        "_id": "spam",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Spam",
+                "desc": "Unwanted promotional content"
+            },
+            {
+                "iso6391": "es",
+                "name": "Spam",
+                "desc": "Contenido promocional no deseado"
+            }
+        ],
+        "severity": 1,
+        "status": "A"
+    },
+    {
+        "_id": "harassment",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Harassment",
+                "desc": "Offensive or abusive behavior"
+            },
+            {
+                "iso6391": "es",
+                "name": "Acoso",
+                "desc": "Comportamiento ofensivo o abusivo"
+            }
+        ],
+        "severity": 2,
+        "status": "A"
+    },
+    {
+        "_id": "fake_profile",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Fake profile",
+                "desc": "Misleading or fake identity"
+            },
+            {
+                "iso6391": "es",
+                "name": "Perfil falso",
+                "desc": "Identidad falsa o engañosa"
+            }
+        ],
+        "severity": 2,
+        "status": "A"
+    },
+    {
+        "_id": "sexual_content",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Sexual content",
+                "desc": "Inappropriate sexual content"
+            },
+            {
+                "iso6391": "es",
+                "name": "Contenido sexual",
+                "desc": "Contenido sexual inapropiado"
+            }
+        ],
+        "severity": 4,
+        "status": "A"
+    },
+    {
+        "_id": "hate_speech",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Hate speech",
+                "desc": "Hateful or discriminatory speech"
+            },
+            {
+                "iso6391": "es",
+                "name": "Discurso de odio",
+                "desc": "Lenguaje discriminatorio u ofensivo"
+            }
+        ],
+        "severity": 4,
+        "status": "A"
+    },
+    {
+        "_id": "scam_fraud",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Scam or fraud",
+                "desc": "Fraudulent activity or scams"
+            },
+            {
+                "iso6391": "es",
+                "name": "Estafa o fraude",
+                "desc": "Actividad fraudulenta"
+            }
+        ],
+        "severity": 5,
+        "status": "A"
+    },
+    {
+        "_id": "impersonation",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Impersonation",
+                "desc": "Pretending to be someone else"
+            },
+            {
+                "iso6391": "es",
+                "name": "Suplantación",
+                "desc": "Hacerse pasar por otra persona"
+            }
+        ],
+        "severity": 3,
+        "status": "A"
+    },
+    {
+        "_id": "minor_safety",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Minor safety",
+                "desc": "Involves minors or unsafe behavior"
+            },
+            {
+                "iso6391": "es",
+                "name": "Seguridad de menores",
+                "desc": "Involucra menores de edad"
+            }
+        ],
+        "severity": 10,
+        "status": "A"
+    },
+    {
+        "_id": "other",
+        "language": [
+            {
+                "iso6391": "en",
+                "name": "Other",
+                "desc": "Other reason not listed"
+            },
+            {
+                "iso6391": "es",
+                "name": "Otro",
+                "desc": "Otro motivo no listado"
+            }
+        ],
+        "severity": 1,
+        "status": "A"
+    }
+]

@@ -1,5 +1,7 @@
+const constants = require('../util/constants');
+
 class BusinessException extends Error {
-    constructor(message, statusCode = 400, name = 'BusinessException') {
+    constructor(message, statusCode = constants.HTTP_BAD_REQUEST, name = 'BusinessException') {
         super(message);
         this.name = name;
         this.statusCode = statusCode;

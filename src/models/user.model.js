@@ -73,7 +73,7 @@ const userSchema = new mongoose.Schema({
   lifestyle: { type: lifestyleSchema },
   musicPreferences: { type: musicPreferencesSchema },
   profileConfig: { type: profileConfigSchema },
-  status: { type: String, enum: ['active', 'inactive'], default: 'active', lowercase: true },
+  status: { type: String, enum: ['active', 'inactive', 'deleting'], default: 'active', lowercase: true },
   created_at: { type: Date, default: Date.now }
 }, {
   versionKey: false

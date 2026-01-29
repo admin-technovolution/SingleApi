@@ -8,7 +8,7 @@ const CACHE_TTL_SECS = process.env.MASTER_DATA_CACHE_TTL_SECS || 86400;
 
 const getLookingFor = async () => {
     let lookingFor = cache.get(consCache.CACHE_KEY_LOOKING_FOR);
-    if (!lookingFor) {
+    if (!lookingFor || lookingFor.length === 0) {
         lookingFor = await LookingForRepository.findAllByStatus(constants.STATUS_ACTIVE);
         cache.set(consCache.CACHE_KEY_LOOKING_FOR, lookingFor, CACHE_TTL_SECS);
     }

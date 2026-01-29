@@ -11,6 +11,7 @@ const conversationSchema = new Schema({
     chatId: { type: Schema.Types.ObjectId, ref: "Chat" },
     sender: { type: Schema.Types.ObjectId, ref: "User" },
     content: String,
+    messageId: { type: Schema.Types.ObjectId, ref: "Conversation" },
     attachments: [String],
     reactions: [reactionSchema],
     seenBy: [{ type: Schema.Types.ObjectId, ref: "User" }],

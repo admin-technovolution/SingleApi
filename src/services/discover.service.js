@@ -40,7 +40,6 @@ const createPipeline = async (meUser, queryParams) => {
     const cursorObjectId = queryParams.cursor ? new ObjectId(queryParams.cursor) : null;
     const myGender = meUser.userInfo?.gender;
     const myPreferences = meUser.preferences?.preferences;
-    const myLookingFor = meUser.preferences?.lookingFor;
     const myMaxDistance = meUser.profileConfig?.maximumDistance;
     const myAgeRange = meUser.profileConfig?.ageRange;
     const myOriginLocation = meUser.effectiveLocation.coordinates;
@@ -176,9 +175,6 @@ const createPipeline = async (meUser, queryParams) => {
             }
         }
     });
-
-    // Filter by looking for
-    pipeline.push({ $match: { "preferences.lookingFor": myLookingFor } });
 
     // Exclude fields
     pipeline.push({

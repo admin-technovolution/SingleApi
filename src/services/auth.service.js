@@ -71,7 +71,7 @@ const refreshTokenUser = async (req) => {
 
         return new BaseResponse(true, [], { token, refreshToken });
     } catch (err) {
-        logger.error(`Error refreshing token: ${err}`, { className: filename });
+        logger.error({ message: `Error refreshing token: ${err}`, className: filename, req: req });
         throw new BusinessException(c.CODE_ERROR_AUTH, 401);
     }
 }
@@ -198,6 +198,7 @@ const deleteRedisTokens = async (userId) => {
 
     await deleteKeysByUserId(dataAccessTokens, userId);
     await deleteKeysByUserId(dataRefreshTokens, userId);
+    await redisClient.del(`${consCache.REDIS_KEY_USER_SOCKETS}${userId}`);
 }
 
 const deleteFcmTokens = async (userId) => {

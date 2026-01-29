@@ -3,42 +3,42 @@ const logger = require('../../shared/config/logger');
 const filename = path.basename(__filename);
 const c = require('../../shared/util/constants.frontcodes');
 const DataLayerException = require('../../shared/exceptionHandler/DataLayerException');
-const Dislikes = require('../models/dislikes.model');
+const Report = require('../models/report.model');
 
 const findByAnyFilter = async (filter) => {
     try {
-        return await Dislikes.find(filter);
+        return await Report.find(filter);
     } catch (err) {
         logger.error(`Error in findByAnyFilter. Error: ${err}`, { className: filename });
         throw new DataLayerException(c.CODE_INTERNAL_SERVER_ERROR);
     }
 }
 
-async function save(dislike) {
+const findOneByAnyFilter = async (filter) => {
     try {
-        return await dislike.save();
+        return await Report.findOne(filter);
+    } catch (err) {
+        logger.error(`Error in findOneByAnyFilter. Error: ${err}`, { className: filename });
+        throw new DataLayerException(c.CODE_INTERNAL_SERVER_ERROR);
+    }
+}
+
+async function save(report) {
+    try {
+        return await report.save();
     } catch (err) {
         logger.error(`Error in save. Error: ${err}`, { className: filename });
         throw new DataLayerException(c.CODE_INTERNAL_SERVER_ERROR);
     }
 }
 
-const deleteById = async (id) => {
-    try {
-        return await Dislikes.find(id);
-    } catch (err) {
-        logger.error(`Error in deleteById. Error: ${err}`, { className: filename });
-        throw new DataLayerException(c.CODE_INTERNAL_SERVER_ERROR);
-    }
-}
-
 const deleteManyByFilter = async (filter) => {
     try {
-        return await Dislikes.deleteMany(filter);
+        return await Report.deleteMany(filter);
     } catch (err) {
         logger.error(`Error in deleteManyByFilter. Error: ${err}`, { className: filename });
         throw new DataLayerException(c.CODE_INTERNAL_SERVER_ERROR);
     }
 }
 
-module.exports = { findByAnyFilter, save, deleteById, deleteManyByFilter };
+module.exports = { findByAnyFilter, findOneByAnyFilter, save, deleteManyByFilter };

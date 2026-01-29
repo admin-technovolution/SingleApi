@@ -85,6 +85,15 @@ async function save(user) {
     }
 }
 
+async function findByIdAndDelete(id) {
+    try {
+        return await User.findByIdAndDelete(id);
+    } catch (err) {
+        logger.error(`Error in findByIdAndDelete. Error: ${err}`, { className: filename });
+        throw new DataLayerException(c.CODE_INTERNAL_SERVER_ERROR);
+    }
+}
+
 async function findByIdAndUpdate(id, user) {
     try {
         return await User.findByIdAndUpdate(
@@ -98,4 +107,4 @@ async function findByIdAndUpdate(id, user) {
     }
 }
 
-module.exports = { findById, findOneByFilter, save, findByIdAndUpdate, findByPipeline };
+module.exports = { findById, findOneByFilter, save, findByIdAndUpdate, findByPipeline, findByIdAndDelete };

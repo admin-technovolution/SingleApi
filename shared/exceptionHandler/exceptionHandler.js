@@ -8,7 +8,7 @@ const BusinessException = require('./BusinessException');
 const DataLayerException = require('./DataLayerException');
 
 function exceptionHandler(err, req, res, next) {
-    logger.error({message: `Ingresando a exceptionHandler. Error: ${err}`, className: filename, req: req});
+    logger.error({ message: `Ingresando a exceptionHandler. Error: ${err}`, className: filename, req: req });
     let message = err.message;
     if (err instanceof SyntaxError && err.status === 400 && 'body' in err) {
         let response = new BaseResponse(false, [c.CODE_MALFORMED_BAD_REQUEST]);

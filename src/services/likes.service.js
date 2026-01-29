@@ -1,3 +1,6 @@
+const path = require('path');
+const logger = require('../../shared/config/logger');
+const filename = path.basename(__filename);
 const BaseResponse = require('../../shared/util/baseResponse');
 const BusinessException = require('../../shared/exceptionHandler/BusinessException');
 const BasePaginatedResponse = require('../../shared/util/basePaginatedResponse');
@@ -32,6 +35,7 @@ const sendLike = async (req) => {
     await LikeRepository.save(like);
 
     const isMatch = await validateIsMatch(body, userId);
+    logger.info(`Like sent: fromUserId: ${userId}, toUserId: ${body.toUserId}, isMatch: ${isMatch}`, { className: filename, req: req });
     let data = {
         isMatch
     };

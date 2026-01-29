@@ -1,12 +1,12 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy Node.js app to Azure Web App - single
+name: Build and deploy Node.js app to Azure Web App - single-dev
 
 on:
   push:
     branches:
-      - main
+      - develop
   workflow_dispatch:
 
 jobs:
@@ -23,11 +23,10 @@ jobs:
         with:
           node-version: '22.x'
 
-      - name: npm install, build, and remove node_modules
+      - name: npm install, build
         run: |
           npm install
           npm run build --if-present
-          rm -rf node_modules
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
@@ -51,16 +50,15 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_EF8E76B879464CEB94C10BC17C6F2887 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_1EB37C6EC861407AB65D62371F43210C }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_67FDDEDA62494827B93E1AC41681B960 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_6A1BA5F26C644AF4ACE7355F6049F5ED }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_6475E228CC984B66B81B8C2836B0BA90 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_7829DB759A244C788300070578D07DEC }}
 
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'single'
+          app-name: 'single-dev'
           slot-name: 'Production'
           package: .
-
           

@@ -1,3 +1,6 @@
+const path = require('path');
+const logger = require('../../shared/config/logger');
+const filename = path.basename(__filename);
 const { flatten } = require('flat');
 const ObjectId = require("mongoose").Types.ObjectId;
 const BaseResponse = require('../../shared/util/baseResponse');
@@ -8,6 +11,7 @@ const googlePayClient = require('../client/googlePay.client');
 const UserRepository = require('../repository/user.repository');
 const c = require('../../shared/util/constants.frontcodes');
 const constants = require('../../shared/util/constants');
+const consCache = require('../../shared/util/constants.cache');
 const configService = require('../services/config.service');
 const genderService = require('../services/gender.service');
 const dietService = require('../services/dietHabit.service');
@@ -22,9 +26,17 @@ const languageService = require('../services/language.service');
 const lookingForService = require('../services/lookingFor.service');
 const zodiacSignService = require('../services/zodiacSign.service');
 const util = require('../../shared/util/util');
+const utilNudity = require('../../shared/util/util.nudity');
 const jwtUtil = require('../../shared/util/jwt');
+const redisClient = require('../../shared/config/redis');
 const User = require('../models/user.model');
+const ChatRepository = require('../repository/chat.repository');
+const MatchRepository = require('../repository/match.repository');
+const ConversationRepository = require('../repository/conversation.repository');
 const LikeRepository = require('../repository/likes.repository');
+const DislikeRepository = require('../repository/dislikes.repository');
+const FCMTokenRepository = require('../repository/fcmToken.repository');
+const ReportRepository = require('../repository/report.repository');
 const SubscriptionRepository = require('../repository/subscription.repository');
 const azureUploader = new AzureUploader(process.env.S3_CONNECTION_STRING, process.env.S3_CONTAINER);
 
@@ -83,6 +95,8 @@ const registerUser = async (req) => {
     let body = req.body;
     const files = req.files;
     await validateUserInput(body, files);
+
+    await utilNudity.checkNudityImages(files, constants.NEW_USER, req);
 
     let hashedPassword = await util.generateHash(body.password, true);
 
@@ -146,6 +160,185 @@ const changePassword = async (req) => {
     return new BaseResponse(true, [message]);
 }
 
+const deleteUserAccount = async (req) => {
+    const token = req.headers['authorization'];
+    const userId = jwtUtil.getValueFromJwtToken(token, 'id');
+
+    deleteUserAccountFlow(userId);
+
+    message = c.CODE_SUCCESS;
+    return new BaseResponse(true, [message]);
+}
+
+const deleteUserAccountFlow = async (userId) => {
+    try {
+        logger.info(`Starting deleteUserAccount proccess for user ${userId}`, { className: filename });
+        const userIdObject = new ObjectId(userId);
+
+        const userDB = await updateUserStatusDeleting(userIdObject);
+        const chats = await findChats(userIdObject);
+
+        await deleteDislikes(userIdObject);
+        await deleteLikes(userIdObject);
+        await deleteFCMTokens(userIdObject);
+        await deleteReports(userIdObject);
+        await deleteConversations(chats);
+        await deleteChats(userIdObject);
+        await deleteMatchs(userIdObject);
+        await deletePhotos(userDB);
+        await deleteRedisInfo(userId);
+        await removeUserAccount(userIdObject);
+        logger.info(`Finished successfully deleteUserAccount proccess for user ${userId}`, { className: filename });
+    } catch (err) {
+        logger.error(`Error: need to re-execute the user delete manually for user ${userId}`, { className: filename });
+        logger.error(`Error in deleteUserAccount. Error: ${err}`, { className: filename });
+    }
+}
+
+const updateUserStatusDeleting = async (userId) => {
+    logger.info(`Updating user with status ${constants.STATUS_DESC_DELETING}`, { className: filename });
+
+    const set = { status: constants.STATUS_DESC_DELETING };
+    return await UserRepository.findByIdAndUpdate(userId, set);
+}
+
+const deleteDislikes = async (userId) => {
+    logger.info(`Deleting dislikes associated to the user`, { className: filename });
+    const filter = {
+        $or: [
+            { fromUserId: userId },
+            { toUserId: userId }
+        ]
+    };
+
+    await DislikeRepository.deleteManyByFilter(filter);
+}
+
+const deleteLikes = async (userId) => {
+    logger.info(`Deleting likes associated to the user`, { className: filename });
+    const filter = {
+        $or: [
+            { fromUserId: userId },
+            { toUserId: userId }
+        ]
+    };
+
+    await LikeRepository.deleteManyByFilter(filter);
+}
+
+const deleteFCMTokens = async (userId) => {
+    logger.info(`Deleting FCM Tokens associated to the user`, { className: filename });
+    const filter = {
+        userId: userId
+    };
+
+    await FCMTokenRepository.deleteAllByFilter(filter);
+}
+
+const deleteReports = async (userId) => {
+    logger.info(`Deleting reports associated to the user`, { className: filename });
+    const filter = {
+        $or: [
+            { reporterUserId: userId },
+            { reportedUserId: userId }
+        ]
+    };
+
+    await ReportRepository.deleteManyByFilter(filter);
+}
+
+const findChats = async (userId) => {
+    logger.info(`Finding chats associated to the user`, { className: filename });
+    const filter = {
+        users: userId
+    };
+    return await ChatRepository.findByAnyFilter(filter);
+}
+
+const deleteConversations = async (chats) => {
+    logger.info(`Deleting conversations associated to the chat user`, { className: filename });
+
+    const filter = {
+        chatId: { $in: chats.map(c => c._id) }
+    };
+
+    await ConversationRepository.deleteManyByFilter(filter);
+}
+
+const deleteChats = async (userId) => {
+    logger.info(`Deleting chats associated to the user`, { className: filename });
+    const filter = {
+        users: userId
+    };
+
+    await ChatRepository.deleteManyByFilter(filter);
+}
+
+const deleteMatchs = async (userId) => {
+    logger.info(`Deleting matchs associated to the user`, { className: filename });
+    const filter = {
+        users: userId
+    };
+
+    await MatchRepository.deleteManyByFilter(filter);
+}
+
+const deletePhotos = async (user) => {
+    logger.info(`Deleting photos in Azure Blob Storage associated to the user`, { className: filename });
+    const blobNames = [];
+
+    for (const photo of user.photos) {
+        for (const size of photo.sizes) {
+            const blobName = photo.path + size.name;
+            blobNames.push(blobName);
+        }
+    }
+
+    await azureUploader.deleteBatch(blobNames);
+}
+
+const deleteRedisInfo = async (userId) => {
+    logger.info(`Deleting redis keys associated to the user`, { className: filename });
+
+    const dataAccessTokens = await getRedisDataByPattern(`${consCache.REDIS_KEY_ACCESS_TOKEN}*`);
+    const dataRefreshTokens = await getRedisDataByPattern(`${consCache.REDIS_KEY_REFRESH_TOKEN}*`);
+
+    await deleteKeysByUserId(dataAccessTokens, userId);
+    await deleteKeysByUserId(dataRefreshTokens, userId);
+    await redisClient.del(`${consCache.REDIS_KEY_USER_SOCKETS}${userId}`);
+
+}
+
+const deleteKeysByUserId = async (data, userId) => {
+    for (const item of data) {
+        const value = JSON.parse(item.value);
+        if (value.id === userId) {
+            await redisClient.del(item.key);
+        }
+    }
+}
+
+const getRedisDataByPattern = async (pattern) => {
+    const keys = [];
+
+    for await (const key of redisClient.scanIterator({
+        MATCH: pattern,
+        COUNT: 100,
+    })) {
+        key.forEach(k => keys.push(k.toString()));
+    }
+
+    if (keys.length === 0) return [];
+
+    const values = await redisClient.mGet(keys);
+    return keys.map((k, i) => ({ key: k, value: values[i] }));
+}
+
+const removeUserAccount = async (userId) => {
+    logger.info(`Removing user`, { className: filename });
+    await UserRepository.findByIdAndDelete(userId);
+}
+
 const addImageUser = async (req) => {
     const files = req.files;
 
@@ -158,6 +351,8 @@ const addImageUser = async (req) => {
     let user = await UserRepository.findOneByFilter(filter);
 
     if (user.photos.length + files.length > 6) throw new BusinessException(c.CODE_PHOTOS_MAX);
+
+    await utilNudity.checkNudityImages(files, userId, req);
 
     const processor = new ImageProcessor();
     const addIsProfile = user.photos.length === 0;
@@ -186,6 +381,8 @@ const updateImageUser = async (req) => {
     let user = await UserRepository.findOneByFilter(filter);
 
     if (!user) throw new BusinessException(c.CODE_PHOTOS_NOT_FOUND);
+
+    await utilNudity.checkNudityImages(files, userId, req);
 
     const processor = new ImageProcessor();
     const filesTransformed = await processor.processImages(files, userId);
@@ -443,4 +640,14 @@ const createPipeline = async (id) => {
     return pipeline;
 };
 
-module.exports = { registerUser, getUserMe, getUserById, updateUser, updateImageUser, addImageUser, deleteImageUser, changePassword };
+module.exports = {
+    registerUser,
+    getUserMe,
+    getUserById,
+    updateUser,
+    updateImageUser,
+    addImageUser,
+    deleteImageUser,
+    changePassword,
+    deleteUserAccount
+};

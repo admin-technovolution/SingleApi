@@ -57,6 +57,10 @@ const chatUpdateMessageSchema = Joi.object({
  *         content:
  *           type: string
  *           example: Hola, ¿cómo estás?
+ *         messageId:
+ *           type: string
+ *           example: 68c490865d8254ec33d4fb5f
+
  * 
  */
 const chatSendMessageSchema = Joi.object({
@@ -69,6 +73,10 @@ const chatSendMessageSchema = Joi.object({
         .messages({
             'any.required': c.CODE_CONTENT_REQUIRED,
             'string.empty': c.CODE_CONTENT_REQUIRED
+        }),
+    messageId: Joi.string().optional()
+        .messages({
+            'string.empty': c.CODE_MESSAGEID_REQUIRED,
         })
 });
 
@@ -96,6 +104,6 @@ const openChatSchema = Joi.object({
 
 module.exports = {
     chatUpdateMessageSchema,
-    chatSendMessageSchema, 
+    chatSendMessageSchema,
     openChatSchema
 };
