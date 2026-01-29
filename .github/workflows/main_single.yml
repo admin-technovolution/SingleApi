@@ -61,5 +61,3 @@ jobs:
           app-name: 'single'
           slot-name: 'Production'
           package: .
-
-          
