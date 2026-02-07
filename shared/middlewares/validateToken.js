@@ -35,7 +35,7 @@ async function validateJwtSocketConnection(socket, next) {
     try {
         let token =
             socket.handshake.auth?.token ||
-            socket.handshake.headers?.authorization | 
+            socket.handshake.headers?.authorization || 
             socket.handshake.query?.token; 
 
         if (!token) throw new BusinessException(constants.CODE_ERROR_AUTH, constants.HTTP_UNATHORIZED);
