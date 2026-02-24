@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const AuthType = require('../enums/EnumAuthType');
 
 const locationSchema = new mongoose.Schema({
   coordinates: { type: [Number], required: true },
@@ -62,9 +63,16 @@ const profileConfigSchema = new mongoose.Schema({
   preferredDistanceUnit: { type: String, enum: ['KM', 'MI'], default: 'KM' }
 }, { _id: false });
 
+const authSchema = new mongoose.Schema({
+  method: { type: String, enum: Object.values(AuthType), required: true, lowercase: true },
+  socialId: { type: String, required: true },
+  isVerified: { type: Boolean, default: false }
+}, { _id: false });
+
 const userSchema = new mongoose.Schema({
   email: { type: String, required: true, trim: true },
-  password: { type: String, required: true },
+  password: { type: String, required: false },
+  auth: { type: authSchema, required: false },
   userInfo: { type: userInfoSchema, required: true },
   preferences: { type: preferencesSchema, required: true },
   location: { type: locationSchema },

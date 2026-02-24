@@ -1,13 +1,20 @@
 const path = require('path');
 const logger = require('../../shared/config/logger');
 const filename = path.basename(__filename);
+const ClientException = require('../../shared/exceptionHandler/ClientException');
 const EnumCancelReason = require('../enums/EnumCancelReason');
 const EnumPaymentState = require('../enums/EnumPaymentState');
 const google = require('googleapis').google;
+const { OAuth2Client } = require('google-auth-library');
+const c = require('../../shared/util/constants.frontcodes');
 const googleServiceAccountBase64 = process.env.GOOGLE_SERVICE_ACCOUNT;
 const googleServiceAccountBase64Decoded = Buffer.from(googleServiceAccountBase64, "base64").toString("utf8");
 const googleServiceAccount = JSON.parse(googleServiceAccountBase64Decoded);
 const googleServiceScopes = process.env.GOOGLE_SERVICE_SCOPES;
+
+const googleClientIdBase64 = process.env.GOOGLE_CLIENT_ID;
+const googleClientIdDecoded = Buffer.from(googleClientIdBase64, "base64").toString("utf8");
+const googleClient = new OAuth2Client(googleClientIdDecoded);
 
 async function verifySubscription(req, purchaseToken, subscriptionId, packageName) {
     try {
@@ -69,4 +76,27 @@ function isActiveSubscriptionV2(subscriptionDB) {
     return notExpired && validPayment && !isCancelled;
 }
 
-module.exports = { verifySubscription, isActiveSubscription, isActiveSubscriptionV2 };
+async function loginGoogle(req, socialToken) {
+    try {
+        logger.info({ message: `Verifying Google Auth Client`, className: filename, req: req });
+
+        const ticket = await googleClient.verifyIdToken({
+            idToken: socialToken,
+            audience: googleClientIdDecoded,
+        });
+        const payload = ticket.getPayload();
+
+        logger.info({ message: `Google Auth Client Verified. ${JSON.stringify(payload)}`, className: filename, req: req });
+        return {
+            email: payload.email,
+            socialId: payload.sub,
+            name: payload.name,
+            isVerified: payload.email_verified
+        };
+    } catch (error) {
+        logger.error({ message: `Google Auth Client Error: ${error}`, className: filename, req: req });
+        throw new ClientException(c.CODE_ERROR_SERVICE_UNAVAILABLE, 503);
+    }
+}
+
+module.exports = { verifySubscription, isActiveSubscription, isActiveSubscriptionV2, loginGoogle };

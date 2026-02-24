@@ -3,6 +3,8 @@ module.exports = {
     CODE_AGE_RANGE_MIN: "ageRangeMin.valid",
     CODE_AGE_RANGE_MAX_NUMBER: "ageRangeMax.number",
     CODE_AGE_RANGE_MIN_NUMBER: "ageRangeMin.number",
+    CODE_AUTH_METHOD_MAX: "authMethod.max",
+    CODE_SOCIAL_TOKEN_MAX: "socialToken.max",
     CODE_BIOGRAPHY_MAX: "biography.max",
     CODE_BIOGRAPHY_REQUIRED: "biography.required",
     CODE_BIRTHDATE_REQUIRED: "birthdate.required",
@@ -125,5 +127,6 @@ module.exports = {
     CODE_SUCCESS_SENT_PASSWORD_RESET_CODE: "SUCCESS_SENT_PASSWORD_RESET_CODE",
     CODE_SUCCESS_RESET_PASSWORD: "SUCCESS_RESET_PASSWORD",
     CODE_ERROR_LOGIN: "ERROR_LOGIN",
+    CODE_ERROR_SERVICE_UNAVAILABLE: "ERROR_SERVICE_UNAVAILABLE",
     CODE_ERROR_AUTH: "ERROR_AUTH",
 };
