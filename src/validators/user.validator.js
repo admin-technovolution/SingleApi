@@ -1,6 +1,7 @@
 const Joi = require('joi');
 const c = require('../../shared/util/constants.frontcodes');
 const constants = require('../../shared/util/constants');
+const AuthType = require('../enums/EnumAuthType');
 
 /**
  * @swagger
@@ -228,7 +229,6 @@ const constants = require('../../shared/util/constants');
  *       type: object
  *       required:
  *         - email
- *         - password
  *         - userInfo
  *         - preferences
  *         - location
@@ -244,6 +244,12 @@ const constants = require('../../shared/util/constants');
  *           type: string
  *           format: password
  *           example: StrongPassword123
+ *         authMethod:
+ *           type: string
+ *           example: google/apple
+ *         socialToken:
+ *           type: string
+ *           example: eyJhbGciOiAcc...
  *         userInfo:
  *           $ref: '#/components/schemas/UserInfo'
  *         preferences:
@@ -439,19 +445,26 @@ const profileConfigJoi = Joi.object({
 });
 
 const registerUserSchema = Joi.object({
-    email: Joi.string().trim().email().max(128).required()
+    email: Joi.string().trim().email().max(256).required()
         .messages({
             'any.required': c.CODE_EMAIL_REQUIRED,
             'string.empty': c.CODE_EMAIL_REQUIRED,
             'string.max': c.CODE_EMAIL_MAX,
             'string.email': c.CODE_EMAIL_INVALID
         }),
-    password: Joi.string().min(8).max(128).required()
+    password: Joi.string().min(8).max(256)
         .messages({
-            'any.required': c.CODE_PASSWORD_REQUIRED,
-            'string.empty': c.CODE_PASSWORD_REQUIRED,
             'string.min': c.CODE_PASSWORD_MIN,
             'string.max': c.CODE_PASSWORD_MAX
+        }),
+    authMethod: Joi.string().valid(...Object.values(AuthType)).max(256)
+        .messages({
+            'any.only': c.CODE_AUTH_METHOD_INVALID,
+            'string.max': c.CODE_AUTH_METHOD_MAX
+        }),
+    socialToken: Joi.string().max(2048)
+        .messages({
+            'string.max': c.CODE_SOCIAL_TOKEN_MAX
         }),
     userInfo: userInfoJoi.required()
         .messages({
@@ -466,7 +479,10 @@ const registerUserSchema = Joi.object({
             'any.required': c.CODE_LOCATION_REQUIRED
         }),
     profileConfig: profileConfigJoi.optional()
-});
+}).xor('password', 'socialToken').messages({
+    'object.missing': c.CODE_ONLY_PASSWORD_OR_SOCIAL_TOKEN,
+    'object.xor': c.CODE_ONLY_PASSWORD_OR_SOCIAL_TOKEN
+});;
 
 const lifestyleJoi = Joi.object({
     diet: Joi.string().optional()

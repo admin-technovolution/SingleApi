@@ -11,6 +11,7 @@ const MAX_ATTEMPTS_VERIFYING_RESETCODE = process.env.MAX_ATTEMPTS_VERIFYING_RESE
 const mailer = require('../../shared/email/mailer');
 const EnumTemplatesHtml = require('../../shared/email/htmlConstants/EnumTemplatesHtml');
 const EnumSubjectEmail = require('../../shared/email/htmlConstants/EnumSubjectEmail');
+const AuthType = require('../enums/EnumAuthType');
 const c = require('../../shared/util/constants.frontcodes');
 const constants = require('../../shared/util/constants');
 const consCache = require('../../shared/util/constants.cache');
@@ -85,6 +86,7 @@ const loginUser = async (req) => {
     if (!user || user.status !== constants.STATUS_DESC_ACTIVE) throw new BusinessException(c.CODE_ERROR_LOGIN, 401);
 
     if (password) {
+        if (!user.password) throw new BusinessException(c.CODE_ERROR_LOGIN, 401);
         const isMatch = bcrypt.compareSync(password, user.password);
         if (!isMatch) throw new BusinessException(c.CODE_ERROR_LOGIN, 401);
     } else {
@@ -241,7 +243,7 @@ async function verifySocialToken(socialToken, authMethod, user, req) {
 
     if (authMethod !== user.auth.method) throw new BusinessException(c.CODE_ERROR_LOGIN, 401);
 
-    if (authMethod === 'google') {
+    if (authMethod === AuthType.GOOGLE) {
         socialResponse = await googleClient.loginGoogle(req, socialToken);
     } else {
         throw new ClientException(c.CODE_ERROR_SERVICE_UNAVAILABLE, 503);

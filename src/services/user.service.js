@@ -5,6 +5,7 @@ const { flatten } = require('flat');
 const ObjectId = require("mongoose").Types.ObjectId;
 const BaseResponse = require('../../shared/util/baseResponse');
 const BusinessException = require('../../shared/exceptionHandler/BusinessException');
+const ClientException = require('../../shared/exceptionHandler/ClientException');
 const ImageProcessor = require('../../shared/util/ImageProcessor');
 const AzureUploader = require('../../shared/util/AzureUploader');
 const googlePayClient = require('../client/googlePay.client');
@@ -12,6 +13,7 @@ const UserRepository = require('../repository/user.repository');
 const c = require('../../shared/util/constants.frontcodes');
 const constants = require('../../shared/util/constants');
 const consCache = require('../../shared/util/constants.cache');
+const AuthType = require('../enums/EnumAuthType');
 const configService = require('../services/config.service');
 const genderService = require('../services/gender.service');
 const dietService = require('../services/dietHabit.service');
@@ -29,6 +31,7 @@ const util = require('../../shared/util/util');
 const utilNudity = require('../../shared/util/util.nudity');
 const jwtUtil = require('../../shared/util/jwt');
 const redisClient = require('../../shared/config/redis');
+const googleClient = require('../client/googlePay.client');
 const User = require('../models/user.model');
 const ChatRepository = require('../repository/chat.repository');
 const MatchRepository = require('../repository/match.repository');
@@ -98,11 +101,24 @@ const registerUser = async (req) => {
 
     await utilNudity.checkNudityImages(files, constants.NEW_USER, req);
 
-    let hashedPassword = await util.generateHash(body.password, true);
+    let hashedPassword;
+    let auth;
+    if (body.password) {
+        hashedPassword = await util.generateHash(body.password, true);
+    } else {
+        const socialResponse = await verifySocialToken(body, req);
+
+        auth = {
+            method: body.authMethod,
+            socialId: socialResponse.socialId,
+            isVerified: socialResponse.isVerified
+        };
+    }
 
     let user = new User({
         email: body.email.toLowerCase(),
         password: hashedPassword,
+        auth: auth,
         userInfo: {
             fullName: body.userInfo.fullName,
             birthdate: body.userInfo.birthdate,
@@ -639,6 +655,25 @@ const createPipeline = async (id) => {
 
     return pipeline;
 };
+
+async function verifySocialToken(body, req) {
+    let socialResponse;
+    const { socialToken, authMethod } = body;
+
+    if (authMethod === AuthType.GOOGLE) {
+        socialResponse = await googleClient.loginGoogle(req, socialToken);
+    } else {
+        throw new ClientException(c.CODE_ERROR_SERVICE_UNAVAILABLE, 503);
+    }
+
+    logger.info({ message: `Social Response: ${JSON.stringify(socialResponse)}`, className: filename, req: req });
+
+    if (socialResponse.email !== req.body.email) throw new BusinessException(c.CODE_EMAIL_INVALID);
+
+    if (!socialResponse.isVerified) throw new BusinessException(c.CODE_ERROR_REGISTER);
+
+    return socialResponse;
+}
 
 module.exports = {
     registerUser,

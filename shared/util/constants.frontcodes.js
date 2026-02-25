@@ -3,6 +3,7 @@ module.exports = {
     CODE_AGE_RANGE_MIN: "ageRangeMin.valid",
     CODE_AGE_RANGE_MAX_NUMBER: "ageRangeMax.number",
     CODE_AGE_RANGE_MIN_NUMBER: "ageRangeMin.number",
+    CODE_AUTH_METHOD_INVALID: "authMethod.invalid",
     CODE_AUTH_METHOD_MAX: "authMethod.max",
     CODE_SOCIAL_TOKEN_MAX: "socialToken.max",
     CODE_BIOGRAPHY_MAX: "biography.max",
@@ -60,6 +61,7 @@ module.exports = {
     CODE_MUSIC_GENRES_REQUIRED: "musicGenres.required",
     CODE_MUSIC_GENRES_NOT_FOUND: "musicGenres.notFound",
     CODE_OFFERTOKEN_REQUIRED: "offerToken.required",
+    CODE_ONLY_PASSWORD_OR_SOCIAL_TOKEN: "oneOf.onlyPasswordOrSocialToken",
     CODE_ORDER_MAX: "order.max",
     CODE_ORDER_MIN: "order.min",
     CODE_ORDER_NUMBER: "order.number",
@@ -127,6 +129,7 @@ module.exports = {
     CODE_SUCCESS_SENT_PASSWORD_RESET_CODE: "SUCCESS_SENT_PASSWORD_RESET_CODE",
     CODE_SUCCESS_RESET_PASSWORD: "SUCCESS_RESET_PASSWORD",
     CODE_ERROR_LOGIN: "ERROR_LOGIN",
+    CODE_ERROR_REGISTER: "ERROR_REGISTER",
     CODE_ERROR_SERVICE_UNAVAILABLE: "ERROR_SERVICE_UNAVAILABLE",
     CODE_ERROR_AUTH: "ERROR_AUTH",
 };

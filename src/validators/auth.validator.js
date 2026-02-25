@@ -69,7 +69,6 @@ const logoutSchema = Joi.object({
  *       type: object
  *       required:
  *         - email
- *         - authMethod
  *         - fcmToken
  *       properties:
  *         email:
@@ -115,7 +114,10 @@ const loginSchema = Joi.object({
             'any.required': c.CODE_FCM_TOKEN_REQUIRED,
             'string.empty': c.CODE_FCM_TOKEN_REQUIRED
         })
-}).xor('password', 'socialToken');
+}).xor('password', 'socialToken').messages({
+    'object.missing': c.CODE_ONLY_PASSWORD_OR_SOCIAL_TOKEN,
+    'object.xor': c.CODE_ONLY_PASSWORD_OR_SOCIAL_TOKEN
+});
 
 /**
  * @swagger
