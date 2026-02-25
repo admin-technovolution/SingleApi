@@ -97,7 +97,6 @@ const loginSchema = Joi.object({
         }),
     password: Joi.string().trim().max(256)
         .messages({
-            'any.required': c.CODE_PASSWORD_REQUIRED,
             'string.empty': c.CODE_PASSWORD_REQUIRED,
             'string.max': c.CODE_PASSWORD_MAX
         }),
