@@ -90,7 +90,17 @@ const loginUser = async (req) => {
         const isMatch = bcrypt.compareSync(password, user.password);
         if (!isMatch) throw new BusinessException(c.CODE_ERROR_LOGIN, 401);
     } else {
-        await verifySocialToken(socialToken, authMethod, user, req);
+        const socialResponse = await verifySocialToken(socialToken, authMethod, user, req);
+        if (!user.auth || !user.auth.method || !user.auth.socialId) {
+            const auth = {
+                method: authMethod,
+                socialId: socialResponse.socialId,
+                isVerified: socialResponse.isVerified
+            };
+
+            user.auth = auth;
+            await UserRepository.save(user);
+        }
     }
 
     const payload = {
@@ -241,8 +251,6 @@ const getRedisDataByPattern = async (pattern) => {
 async function verifySocialToken(socialToken, authMethod, user, req) {
     let socialResponse;
 
-    if (authMethod !== user.auth.method) throw new BusinessException(c.CODE_ERROR_LOGIN, 401);
-
     if (authMethod === AuthType.GOOGLE) {
         socialResponse = await googleClient.loginGoogle(req, socialToken);
     } else {
@@ -251,11 +259,11 @@ async function verifySocialToken(socialToken, authMethod, user, req) {
 
     logger.info({ message: `Social Response: ${JSON.stringify(socialResponse)}`, className: filename, req: req });
 
-    if (socialResponse.socialId !== user.auth.socialId) throw new BusinessException(c.CODE_ERROR_LOGIN, 401);
-
     if (socialResponse.email !== user.email) throw new BusinessException(c.CODE_ERROR_LOGIN, 401);
 
     if (!socialResponse.isVerified) throw new BusinessException(c.CODE_ERROR_LOGIN, 401);
+
+    return socialResponse;
 }
 
 module.exports = { loginUser, refreshTokenUser, logoutUser, sendPasswordResetCode, verifyResetCode };
