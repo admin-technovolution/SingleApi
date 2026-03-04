@@ -4,6 +4,7 @@ const filename = path.basename(__filename);
 const multer = require('multer');
 const c = require('../../shared/util/constants.frontcodes');
 const BaseResponse = require('../util/baseResponse');
+const ClientException = require('./ClientException');
 const BusinessException = require('./BusinessException');
 const DataLayerException = require('./DataLayerException');
 
@@ -16,6 +17,11 @@ function exceptionHandler(err, req, res, next) {
     }
 
     if (err instanceof BusinessException) {
+        let response = new BaseResponse(false, [message]);
+        return res.status(err.statusCode).json(response);
+    }
+
+    if (err instanceof ClientException) {
         let response = new BaseResponse(false, [message]);
         return res.status(err.statusCode).json(response);
     }

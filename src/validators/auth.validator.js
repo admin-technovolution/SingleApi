@@ -69,7 +69,6 @@ const logoutSchema = Joi.object({
  *       type: object
  *       required:
  *         - email
- *         - password
  *         - fcmToken
  *       properties:
  *         email:
@@ -78,6 +77,12 @@ const logoutSchema = Joi.object({
  *         password:
  *           type: string
  *           example: StrongPassword123
+ *         socialToken:
+ *           type: string
+ *           example: 1234567890
+ *         authMethod:
+ *           type: string
+ *           example: google/apple
  *         fcmToken:
  *           type: string
  *           example: eyJhbGciOi...
@@ -90,17 +95,27 @@ const loginSchema = Joi.object({
             'string.max': c.CODE_EMAIL_MAX,
             'string.email': c.CODE_EMAIL_INVALID
         }),
-    password: Joi.string().trim().max(256).required()
+    password: Joi.string().trim().max(256)
         .messages({
-            'any.required': c.CODE_PASSWORD_REQUIRED,
             'string.empty': c.CODE_PASSWORD_REQUIRED,
             'string.max': c.CODE_PASSWORD_MAX
+        }),
+    authMethod: Joi.string().max(256)
+        .messages({
+            'string.max': c.CODE_AUTH_METHOD_MAX
+        }),
+    socialToken: Joi.string().max(2048)
+        .messages({
+            'string.max': c.CODE_SOCIAL_TOKEN_MAX
         }),
     fcmToken: Joi.string().required()
         .messages({
             'any.required': c.CODE_FCM_TOKEN_REQUIRED,
             'string.empty': c.CODE_FCM_TOKEN_REQUIRED
         })
+}).xor('password', 'socialToken').messages({
+    'object.missing': c.CODE_ONLY_PASSWORD_OR_SOCIAL_TOKEN,
+    'object.xor': c.CODE_ONLY_PASSWORD_OR_SOCIAL_TOKEN
 });
 
 /**

@@ -46,7 +46,7 @@ function responseLogger(req, res, next) {
     res.send = function (body) {
         try {
             const bodyAndFilesSanitized = JSON.stringify(sanitize(body));
-            const message = `Response Method: [${req.method}] Path: [${req.originalUrl}] Body: ${bodyAndFilesSanitized}`;
+            const message = `Response HTTP Status: [${res.statusCode}] Method: [${req.method}] Path: [${req.originalUrl}] Body: ${bodyAndFilesSanitized}`;
             logger.info({ message: message, className: filename, req: req });
         } catch (err) {
             logger.error({ message: constants.ERROR_GENERIC_LOGGING_RESPONSE, className: filename, req: req });

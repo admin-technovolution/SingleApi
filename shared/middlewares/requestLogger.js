@@ -11,7 +11,11 @@ function sanitize(body, files) {
         const clone = { ...body };
         for (const key of Object.keys(clone)) {
             if (constants.SENSITIVE_KEYS.includes(key.toLowerCase())) {
-                clone[key] = constants.MASK_SENSITIVE_KEYS;
+                if (clone[key] === undefined || clone[key] === null || clone[key] === '') {
+                    clone[key] = constants.MASK_VALUE_UNDEFINED_EMPTY;
+                } else {
+                    clone[key] = constants.MASK_SENSITIVE_KEYS;
+                }
             }
         }
         body = clone;
